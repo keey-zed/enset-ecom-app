@@ -1,78 +1,53 @@
 # Microservices Architecture with Spring Cloud: Use Case
 
-This project showcases a microservices architecture built using Spring Cloud. The use case involves creating an application based on two core business services: Vault, Customer Service, and Inventory Service, all orchestrated using various Spring Cloud technical services.
+This project demonstrates a microservices architecture using Spring Cloud for a specific use case. The architecture is based on three core business services:
 
-## Table of Contents
+1. **Customer Management Service**
+2. **Inventory Management Service**
+3. **Order Management Service**
 
-- [Overview](#overview)
-- [Services](#services)
-- [Service Orchestration](#service-orchestration)
-- [Frontend Application](#frontend-application)
+These services interact to provide a complete solution for managing customers, inventory, and orders.
 
-## Overview
+## Architecture Overview
 
-The microservices architecture in this project is designed to illustrate the use of Spring Cloud for building distributed systems. It consists of the following key components:
+The orchestration of services is achieved through various Spring Cloud technical services and tools, ensuring robust, scalable, and reliable microservices communication and operation:
 
-- **Vault Service**: A service responsible for managing secrets and sensitive configuration information.
+- **Spring Cloud Gateway Service**: This service acts as a proxy, routing requests to the appropriate microservices.
 
-- **Customer Service**: A service for managing customer-related data and functionality.
+- **Consul Registry Service**: Consul is used as a service registry, providing a centralized location for service discovery and registration.
 
-- **Inventory Service**: A service responsible for managing inventory and related operations.
+- **Consul Config and Spring Cloud Config**: These services enable externalized configuration management for microservices, making it easier to manage application configurations in a distributed environment.
 
-- **Consul Registry**: A service registry and discovery mechanism that enables service registration and discovery.
+- **Vault Config (Secret Sharing)**: Vault is used to securely store and share secrets and sensitive information between services.
 
-- **Spring Cloud Gateway Service**: Acts as a service proxy and provides routing and load balancing for microservices.
+- **Resilience4J Circuit Breaker**: To enhance the fault tolerance and resilience of microservices, Resilience4J is employed as a circuit breaker framework.
 
-- **Order Service**: A service for managing orders.
-
-- **Spring Cloud Config Service**: Provides centralized configuration management for services.
-
-- **Angular Frontend**: A web frontend for interacting with the microservices.
+- **Web Frontend (Angular)**: The web frontend is built using Angular, providing an intuitive user interface for interacting with the microservices.
 
 ## Services
 
-The microservices in this project are as follows:
+### Customer Management Service
 
-### Vault Service
+The Customer Management Service is responsible for managing customer information, including creating, updating, and retrieving customer data.
 
-- Responsibilities: Manages secrets and sensitive configuration information.
-- Use: Sharing secrets securely between services.
+### Inventory Management Service
 
-### Customer Service
+The Inventory Management Service handles inventory-related tasks, such as managing product availability, quantities, and updates.
 
-- Responsibilities: Manages customer-related data and functionality.
-- Use: Managing customer data and interactions.
+### Order Management Service
 
-### Inventory Service
+The Order Management Service takes care of processing and managing customer orders, including order creation, status updates, and order history.
 
-- Responsibilities: Manages inventory and related operations.
-- Use: Tracking and managing product inventory.
+## Getting Started
 
-### Order Service
+To get started with this project, follow these steps:
 
-- Responsibilities: Manages orders.
-- Use: Handling customer orders and order-related operations.
+1. **Setup and Configuration**: Configure and set up the necessary Spring Cloud components, including Consul Registry, Consul Config, and Vault Config.
 
-### Spring Cloud Gateway Service
+2. **Build and Deploy Microservices**: Build and deploy the Customer Management Service, Inventory Management Service, and Order Management Service.
 
-- Responsibilities: Acts as a service proxy, routing and load balancing for microservices.
-- Use: Routing and load balancing requests to the appropriate microservices.
+3. **Configure Spring Cloud Gateway**: Configure Spring Cloud Gateway to act as a proxy, routing requests to the appropriate microservices.
 
-### Spring Cloud Config Service
+4. **Build and Deploy Angular Frontend**: Build and deploy the Angular web frontend for user interaction.
 
-- Responsibilities: Provides centralized configuration management for services.
-- Use: Managing configuration settings for all services.
-
-## Service Orchestration
-
-Service orchestration is achieved using Spring Cloud technologies:
-
-- **Consul Registry**: This is used for service registration and discovery. Services register with the Consul registry, making it easier for other services to discover and communicate with them.
-
-- **Spring Cloud Gateway Service**: Acts as a service proxy, routing and load balancing requests to the appropriate microservices.
-
-- **Spring Cloud Config**: Centralized configuration management for services.
-
-## Frontend Application
-
-The project includes a web frontend built using Angular. This frontend allows users to interact with the microservices and access various functionalities offered by the services.
+5. **Testing and Usage**: Test and use the microservices and web frontend to manage customers, inventory, and orders.
